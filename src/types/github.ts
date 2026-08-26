@@ -31,4 +31,10 @@ export type GitHubEvent = {
   type: string
   created_at: string
   repo: { name: string; url: string }
+  payload?: {
+    commits?: unknown[]
+    action?: string
+    ref_type?: string
+    ref?: string | null
+  }
 }

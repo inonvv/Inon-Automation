@@ -42,7 +42,7 @@ Then open http://localhost:5173/Inon-Automation/.
 
 - [x] Phase 1 — Scaffold, lint/CI, README skeleton, design shell
 - [x] Phase 2 — GitHub API service layer (typed responses, loading/error/empty states)
-- [ ] Phase 3 — Populate Profile, RepoCard grid, LanguageChart, ActivityFeed
+- [x] Phase 3 — Populate Profile, RepoCard grid, LanguageChart, ActivityFeed
 - [ ] Phase 4 — Responsive + accessibility pass (WCAG AA)
 - [ ] Phase 5 — Deploy + screenshot + live link in README
 - [ ] Phase 6 — Tag `v1.0.0`
