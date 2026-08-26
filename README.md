@@ -4,7 +4,7 @@
 
 Live portfolio for [@inonvv](https://github.com/inonvv). All content — profile, repositories, language breakdown, recent activity — is fetched directly from the GitHub REST API at page load, so the site stays current without manual edits.
 
-> **Live:** https://inonvv.github.io/Inon-Automation/ *(pending first deploy)*
+> **Live:** https://inonvv.github.io/Inon-Automation/
 >
 > _Screenshot: pending phase 5._
 

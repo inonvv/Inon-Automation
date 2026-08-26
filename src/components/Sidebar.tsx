@@ -9,7 +9,7 @@ export default function Sidebar({ sections }: Props) {
       className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-between py-12 lg:py-24"
     >
       <div>
-        <h1 className="text-4xl font-bold text-slate-lightest tracking-tight">Inon Vaknin</h1>
+        <h1 className="text-4xl font-bold text-slate-lightest tracking-tight">Inon Vinograsky</h1>
         <p className="mt-2 text-lg text-slate-light">Builder of useful automations.</p>
         <p className="mt-4 max-w-xs text-sm text-slate">
           Live portfolio sourced from{' '}
