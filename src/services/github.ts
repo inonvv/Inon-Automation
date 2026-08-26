@@ -1,7 +1,7 @@
 // GitHub API service layer: typed fetchers with rate-limit/error handling
 // and per-endpoint promise memoization so multiple components share one request.
 
-import type { GitHubUser, GitHubRepo, GitHubEvent } from '../types/github'
+import type { GitHubUser, GitHubRepo } from '../types/github'
 
 export const GITHUB_USERNAME = 'inonvv'
 export const GITHUB_API_BASE = 'https://api.github.com'
@@ -70,6 +70,3 @@ export const getUser = () => cached<GitHubUser>(`/users/${GITHUB_USERNAME}`)
 
 export const getRepos = () =>
   cached<GitHubRepo[]>(`/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
-
-export const getEvents = () =>
-  cached<GitHubEvent[]>(`/users/${GITHUB_USERNAME}/events/public?per_page=30`)

@@ -3,13 +3,11 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Repos from './components/Repos'
 import Languages from './components/Languages'
-import Activity from './components/Activity'
 
 const SECTIONS = [
   { id: 'about', label: 'About' },
   { id: 'repos', label: 'Repositories' },
   { id: 'languages', label: 'Languages' },
-  { id: 'activity', label: 'Activity' },
 ]
 
 function App() {
@@ -28,7 +26,6 @@ function App() {
           <About />
           <Repos />
           <Languages />
-          <Activity />
         </main>
       </div>
     </div>

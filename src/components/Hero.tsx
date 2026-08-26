@@ -13,7 +13,7 @@ export default function Hero() {
       </h3>
       <p className="mt-6 max-w-xl text-slate">
         This site pulls live data from my GitHub account so it stays current without me touching it.
-        Scroll for repositories, language breakdown, and recent activity.
+        Scroll for repositories and language breakdown.
       </p>
     </section>
   )

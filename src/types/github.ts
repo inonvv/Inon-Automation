@@ -25,16 +25,3 @@ export type GitHubRepo = {
   archived: boolean
   updated_at: string
 }
-
-export type GitHubEvent = {
-  id: string
-  type: string
-  created_at: string
-  repo: { name: string; url: string }
-  payload?: {
-    commits?: unknown[]
-    action?: string
-    ref_type?: string
-    ref?: string | null
-  }
-}
