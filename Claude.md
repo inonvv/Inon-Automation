@@ -10,7 +10,7 @@ Build a front-end portfolio site that pulls my GitHub data live and presents it 
 4. Only then scaffold.
 
 ## Definition of Done
-- Site fetches and renders: profile (avatar, bio, followers), pinned/top repos (name, description, stars, language, link), language breakdown, and recent activity.
+- Site fetches and renders: profile (avatar, bio, followers), pinned/top repos (name, description, stars, language, link), and language breakdown. (Recent activity dropped by owner decision, 2026-08-26.)
 - Responsive, accessible (WCAG AA: alt text, focus states, semantic HTML, contrast).
 - GitHub API calls handle rate limits and errors gracefully (loading + error + empty states).
 - No API token hard-coded. If auth is needed, use an env var / serverless proxy.
@@ -28,7 +28,7 @@ Build a front-end portfolio site that pulls my GitHub data live and presents it 
 ## Default stack (propose, then confirm with me)
 - Vite + React + TypeScript
 - Plain CSS or Tailwind (ask me)
-- GitHub REST API (`/users/{username}`, `/users/{username}/repos`, `/users/{username}/events/public`)
+- GitHub REST API (`/users/{username}`, `/users/{username}/repos`)
 - Deploy: Vercel or GitHub Pages
 
 ## Constraints / preferences

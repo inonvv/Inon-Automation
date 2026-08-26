@@ -32,8 +32,7 @@ async function fetchJson<T>(path: string): Promise<T> {
 
   if (!res.ok) {
     const rateLimited =
-      (res.status === 403 || res.status === 429) &&
-      res.headers.get('x-ratelimit-remaining') === '0'
+      (res.status === 403 || res.status === 429) && res.headers.get('x-ratelimit-remaining') === '0'
     if (rateLimited) {
       const reset = res.headers.get('x-ratelimit-reset')
       const resetAt = reset ? new Date(Number(reset) * 1000) : null
