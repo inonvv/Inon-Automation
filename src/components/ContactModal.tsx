@@ -89,7 +89,9 @@ export default function ContactModal({ open, onClose }: Props) {
       setStatus('sent')
     } catch (err) {
       setStatus('error')
-      setErrorMsg(err instanceof Error ? err.message : 'Sending failed. Please try again in a moment.')
+      setErrorMsg(
+        err instanceof Error ? err.message : 'Sending failed. Please try again in a moment.',
+      )
     }
   }
 
@@ -150,7 +152,10 @@ export default function ContactModal({ open, onClose }: Props) {
               className="hidden"
             />
             <div>
-              <label htmlFor="contact-name" className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate">
+              <label
+                htmlFor="contact-name"
+                className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate"
+              >
                 Name
               </label>
               <input
@@ -164,7 +169,10 @@ export default function ContactModal({ open, onClose }: Props) {
               />
             </div>
             <div>
-              <label htmlFor="contact-email" className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate">
+              <label
+                htmlFor="contact-email"
+                className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate"
+              >
                 Email
               </label>
               <input
@@ -178,7 +186,10 @@ export default function ContactModal({ open, onClose }: Props) {
               />
             </div>
             <div>
-              <label htmlFor="contact-message" className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate">
+              <label
+                htmlFor="contact-message"
+                className="mb-1 block font-mono text-xs uppercase tracking-widest text-slate"
+              >
                 Message
               </label>
               <textarea

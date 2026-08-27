@@ -28,7 +28,10 @@ function readLog(): SendRecord[] {
     if (!Array.isArray(parsed)) return []
     return parsed.filter(
       (r): r is SendRecord =>
-        typeof r === 'object' && r !== null && typeof (r as SendRecord).h === 'string' && typeof (r as SendRecord).t === 'number',
+        typeof r === 'object' &&
+        r !== null &&
+        typeof (r as SendRecord).h === 'string' &&
+        typeof (r as SendRecord).t === 'number',
     )
   } catch {
     return memoryLog
