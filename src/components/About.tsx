@@ -27,14 +27,6 @@ export default function About() {
                   <dd className="mt-1 text-2xl text-accent">{user.public_repos}</dd>
                 </div>
               </dl>
-              <p className="font-mono text-sm">
-                <a
-                  href={user.html_url}
-                  className="text-accent transition-colors hover:text-white-soft"
-                >
-                  @{user.login} on GitHub →
-                </a>
-              </p>
             </div>
             <div className="group relative max-w-60">
               <img
