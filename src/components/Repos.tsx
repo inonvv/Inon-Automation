@@ -4,19 +4,15 @@ import RepoCard from './RepoCard'
 import { useGitHub } from '../hooks/useGitHub'
 import { getRepos } from '../services/github'
 
-const MAX_REPOS = 6
+// Curated by owner; order is display order.
+const FEATURED = ['formulaSim', 'GIFgenerator', 'automate-ebay', 'CC-project']
 
 export default function Repos() {
   const { status, data: repos, error, retry } = useGitHub(getRepos)
 
-  const top = (repos ?? [])
-    .filter((r) => !r.fork && !r.archived)
-    .sort(
-      (a, b) =>
-        b.stargazers_count - a.stargazers_count ||
-        Date.parse(b.updated_at) - Date.parse(a.updated_at),
-    )
-    .slice(0, MAX_REPOS)
+  const top = FEATURED.map((name) => (repos ?? []).find((r) => r.name === name)).filter(
+    (r) => r !== undefined,
+  )
 
   return (
     <Section id="repos" number="02" title="Repositories">
@@ -24,7 +20,7 @@ export default function Repos() {
         {top.length === 0 ? (
           <p className="font-mono text-sm text-slate">No public repositories to show yet.</p>
         ) : (
-          <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid gap-4 sm:grid-cols-2">
             {top.map((repo) => (
               <RepoCard key={repo.id} repo={repo} />
             ))}
