@@ -5,8 +5,8 @@
 Live portfolio for [@inonvv](https://github.com/inonvv). All content — profile, repositories, language breakdown — is fetched directly from the GitHub REST API at page load, so the site stays current without manual edits.
 
 > **Live:** https://inonvv.github.io/Inon-Automation/
->
-> _Screenshot: pending phase 5._
+
+![Screenshot of the portfolio site](./docs/screenshot.png)
 
 ## Tech stack
 
@@ -44,7 +44,7 @@ Then open http://localhost:5173/Inon-Automation/.
 - [x] Phase 2 — GitHub API service layer (typed responses, loading/error/empty states)
 - [x] Phase 3 — Populate Profile, RepoCard grid, LanguageChart
 - [ ] Phase 4 — Responsive + accessibility pass (WCAG AA)
-- [ ] Phase 5 — Deploy + screenshot + live link in README
+- [x] Phase 5 — Deploy + screenshot + live link in README
 - [ ] Phase 6 — Tag `v1.0.0`
 
 ## License
