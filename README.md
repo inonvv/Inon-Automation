@@ -45,7 +45,7 @@ Then open http://localhost:5173/Inon-Automation/.
 - [x] Phase 3 — Populate Profile, RepoCard grid, LanguageChart
 - [ ] Phase 4 — Responsive + accessibility pass (WCAG AA)
 - [x] Phase 5 — Deploy + screenshot + live link in README
-- [ ] Phase 6 — Tag `v1.0.0`
+- [x] Phase 6 — Tag `v1.0.0`
 
 ## License
 
