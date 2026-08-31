@@ -12,7 +12,7 @@ type Status = 'idle' | 'sending' | 'sent' | 'duplicate' | 'limit' | 'error'
 const MIN_FILL_MS = 3000
 
 const inputClass =
-  'w-full rounded border border-navy-lightest bg-navy px-3 py-2 text-slate-lightest placeholder:text-slate/60'
+  'w-full rounded border border-navy-lightest bg-navy px-3 py-2 text-slate-lightest placeholder:text-slate'
 
 export default function ContactModal({ open, onClose }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null)

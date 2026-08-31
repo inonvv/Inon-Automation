@@ -105,7 +105,7 @@ export default function CvModal({ open, onClose }: Props) {
               href="https://linkedin.com/in/inon-vinogradsky"
               target="_blank"
               rel="noreferrer"
-              className="text-accent hover:underline"
+              className="text-accent underline underline-offset-2"
             >
               LinkedIn
             </a>
