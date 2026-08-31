@@ -3,12 +3,14 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Repos from './components/Repos'
 import Languages from './components/Languages'
+import Resume from './components/Resume'
 import Contact from './components/Contact'
 
 const SECTIONS = [
   { id: 'about', label: 'About' },
   { id: 'repos', label: 'Repositories' },
   { id: 'languages', label: 'Languages' },
+  { id: 'resume', label: 'Résumé' },
   { id: 'contact', label: 'Contact' },
 ]
 
@@ -28,6 +30,7 @@ function App() {
           <About />
           <Repos />
           <Languages />
+          <Resume />
           <Contact />
         </main>
       </div>

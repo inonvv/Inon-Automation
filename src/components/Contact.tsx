@@ -6,7 +6,7 @@ export default function Contact() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Section id="contact" number="04" title="Contact">
+    <Section id="contact" number="05" title="Contact">
       <div className="max-w-xl space-y-6">
         <p className="text-slate-light">
           Whether you have a question, an opportunity, or just want to say hi — my inbox is open.

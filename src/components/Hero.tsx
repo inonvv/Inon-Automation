@@ -6,7 +6,7 @@ export default function Hero() {
         id="hero-heading"
         className="text-5xl md:text-6xl font-bold text-slate-lightest tracking-tight"
       >
-        Inon Vinograsky.
+        Inon Vinogradsky.
       </h2>
       <h3 className="mt-2 text-4xl md:text-5xl font-bold text-slate tracking-tight">
         I build things that automate themselves.
