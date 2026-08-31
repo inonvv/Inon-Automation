@@ -50,16 +50,52 @@ async function fetchJson<T>(path: string): Promise<T> {
   return res.json() as Promise<T>
 }
 
+// Persistent cache in localStorage: fresh entries (within TTL) skip the network
+// entirely; stale entries are served as a fallback when a fetch fails, so a
+// rate-limited visitor still sees data instead of an error.
+const CACHE_TTL_MS = 10 * 60 * 1000
+
+type StoredEntry<T> = { t: number; data: T }
+
+function readStore<T>(path: string): StoredEntry<T> | null {
+  try {
+    const raw = localStorage.getItem(`gh-cache:${path}`)
+    return raw ? (JSON.parse(raw) as StoredEntry<T>) : null
+  } catch {
+    return null
+  }
+}
+
+function writeStore<T>(path: string, data: T): void {
+  try {
+    localStorage.setItem(`gh-cache:${path}`, JSON.stringify({ t: Date.now(), data }))
+  } catch {
+    // Private mode or quota exceeded — cache is best-effort.
+  }
+}
+
 // Memoize in-flight/settled promises per path; drop failures so retry refetches.
 const cache = new Map<string, Promise<unknown>>()
 
 function cached<T>(path: string): Promise<T> {
   let promise = cache.get(path) as Promise<T> | undefined
   if (!promise) {
-    promise = fetchJson<T>(path).catch((err) => {
-      cache.delete(path)
-      throw err
-    })
+    const stored = readStore<T>(path)
+    if (stored && Date.now() - stored.t < CACHE_TTL_MS) {
+      promise = Promise.resolve(stored.data)
+    } else {
+      promise = fetchJson<T>(path).then(
+        (data) => {
+          writeStore(path, data)
+          return data
+        },
+        (err) => {
+          cache.delete(path)
+          if (stored) return stored.data // stale beats an error state
+          throw err
+        },
+      )
+    }
     cache.set(path, promise)
   }
   return promise
