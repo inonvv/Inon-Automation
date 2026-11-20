@@ -38,7 +38,7 @@ export default function Sidebar({ sections }: Props) {
         </li>
         <li>
           <a
-            href="https://www.linkedin.com/in/inon-vinograsky"
+            href="https://www.linkedin.com/in/inon-vinogradsky"
             className="hover:text-accent"
             aria-label="LinkedIn"
           >
